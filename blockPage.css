@@ -1,0 +1,6 @@
+.code {
+    background-color: rgb(170, 42, 55);
+    border: 2px rgb(151, 37, 48) solid;
+    border-radius: 8px;
+    padding: 5px 8px 5px 8px;
+}
