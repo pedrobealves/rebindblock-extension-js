@@ -18,20 +18,19 @@ function parse_query_string(query) {
   return query_string;
 }
 
-var enter_url = window.location.href;
-var bits = enter_url.split("?");
+let enter_url = window.location.href;
+let bits = enter_url.split("?");
 if(bits && bits.length){
-  var url_params = bits[1];
-  console.log("Enter url: " + enter_url)
-  var params = parse_query_string(url_params);
+  let url_params = bits[1];
+  let params = parse_query_string(url_params);
   console.log(JSON.stringify(params));
   if(params){
-    var elem = document.getElementById('ip');
-    elem.innerHTML = "Original IP: " + params.ip;
+    let elem = document.getElementById('ip');
+    elem.textContent = "Original IP: " + params.ip;
     elem = document.getElementById('url');
-    elem.innerHTML = "Triggered URL: " + params.url;
+    elem.textContent = "Triggered URL: " + params.url;
     elem = document.getElementById('attempt');
-    elem.innerHTML = "Attempted IP: " + params.attempt;
+    elem.textContent = "Attempted IP: " + params.attempt;
     elem = document.getElementById('report');
     elem.href = 'https://safebrowsing.google.com/safebrowsing/report_badware/?referrer=antirebind&url=' + encodeURI(params.url);
   }
